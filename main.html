@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraph-Random</title>
+    <link rel="shortcut icon"
+        href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-IoPuNUVqjGUNdfVs-nxht5oHiZFtzA9KRA&s"
+        type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        .parent {
+            height: 100vh;
+            width: 100%;
+            background: #E7CCCC;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .child {
+            height: 400px;
+            width: 700px;
+            background: #EDE8DC;
+            border-radius: 10px 100px / 120px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+            margin-top: 50px;
+        }
+
+        .left {
+            height: 230px;
+            width: 10px;
+            background: #A5B68D;
+            margin-left: 40px;
+            /* border-radius: 10px 100px / 120px; */
+        }
+
+        .box {
+            height: 180px;
+            width: 500px;
+            background-color: #FFD2A0;
+            border-radius: 30px;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            padding: 20px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        }
+
+        .writer {
+            height: 50px;
+            width: 500px;
+            /* background: #000; */
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .writerchild {
+            height: 50px;
+            width: 300px;
+            background: #ffd3a048;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            border-radius: 30px;
+            box-shadow: rgba(3, 101, 214, 0.164) 0px 0px 0px 3px;
+        }
+
+        .right {
+            height: 230px;
+            width: 10px;
+            background: #A5B68D;
+            margin-right: 40px;
+            /* border-radius: 10px 100px / 120px; */
+        }
+
+        .btn {
+            height: 50px;
+            width: 600px;
+            /* background: #000; */
+            margin-top: -70px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .childbtn {
+            height: 50px;
+            width: 150px;
+            background: #FFBE98;
+            margin-top: 20px;
+            border-radius: 40px;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .text {
+            margin-left: 10px;
+        }
+
+        .title {
+          
+            font-family: "Bungee Spice", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <h1 data-aos="zoom-out-right"
+        data-aos-offset="300"
+        data-aos-delay="80"
+        data-aos-duration="2000"
+        data-aos-easing="ease-in-out" class="title">Random Quote Generator</h1>
+        <div  class="child">
+            <div class="left"></div>
+            <div>
+                <div class="box">
+                    <img src="https://cdn-icons-png.flaticon.com/128/17399/17399932.png" alt="" height="25px"
+                        width="25px">
+                    <h2 class="text">No one can make you feel inferior without your consent</h2>
+                </div>
+                <div class="writer">
+                    <h4 class="writerchild">- Eleanor Roosevelt, This is My Story</h4>
+                </div>
+            </div>
+            <div class="right"></div>
+
+        </div>
+        <div class="btn">
+            <button class="childbtn">New Quote</button>
+        </div>
+    </div>
+    <script>
+
+        let colorarr = [
+            "#C1CFA1",
+            "#F7B5CA",
+            "#C75B7A",
+            "#7D8ABC",
+            "#91DDCF",
+            "#CA8787",
+            "#BC7FCD",
+            "#E1AFD1",
+            "#474F7A",
+            "#F9F9E0"];
+        let writernam = [
+            "- Mae West",
+            "- Oscar Wilde",
+            "- Eleanor Roosevelt, This is My Story",
+            "- Walter Scott",
+            "- Benjamin Spock",
+            "- Eleanor Roosevelt",
+            "- Ralph Waldo Emerson",
+            "- Albert Einstein",
+            "- Nelson Mandela",
+            "- Walt Disney"];
+        let quote = [
+            " You only live once, but if you do it right, once is enough.",
+            " I am so clever that sometimes I don't understand a single word of what I am saying",
+            " No one can make you feel inferior without your consent.",
+            "  All men who have turned out worth anything have had the chief hand in their own education.",
+            " Trust yourself. You know more than you think you do.",
+            " The future belongs to those who believe in the beauty of their dreams.",
+            "  To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+            "  Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
+            " The greatest glory in living lies not in never falling, but in rising every time we fall.",
+            " The way to get started is to quit talking and begin doing. "];
+        let parent = document.querySelector('.parent');
+        let btn = document.querySelector('.childbtn');
+        let text = document.querySelector('.text');
+        let writer = document.querySelector('.writerchild');
+
+        let count = 0;
+        btn.addEventListener('click', () => {
+
+            colorarr.forEach(() => {
+                parent.style.background = `${colorarr[Math.floor(Math.random() * colorarr.length)]}`
+
+
+            })
+
+            if (count < 10) {
+                quote.forEach(() => {
+
+                    text.textContent = `${quote[count]}`
+                    writer.textContent = `${writernam[count]}`
+                })
+                count++;
+                console.log(count)
+            } else {
+                count = 0;
+            }
+
+
+        })
+    </script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+</body>
+
+</html>
